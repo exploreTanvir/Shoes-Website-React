@@ -1,0 +1,10 @@
+.recommendedContainer {
+  display: flex;
+  margin-left: 20rem;
+}
+.recommendedTitle {
+  margin-top: 20px;
+  margin-left: 20rem;
+  margin-bottom: 20px;
+  font-size: 20px;
+}

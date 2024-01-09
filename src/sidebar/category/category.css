@@ -1,0 +1,49 @@
+.sidebarTitle {
+  font-size: 22px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+.sidebarItem {
+  margin-top: 20px;
+}
+.sidebarLabelContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.sidebarLabelContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkMark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #eee;
+  border-radius: 50%;
+}
+.sidebarLabelContainer:hover input ~ .checkMark {
+  background-color: #ccc;
+}
+.sidebarLabelContainer input:checked ~ .checkMark {
+  background-color: #2196f3;
+}
+.checkMark::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.sidebarLabelContainer input:checked ~ .checkMark::after {
+  display: block;
+}
+.line {
+  margin-top: 3rem;
+  border-color: #f7f7f7;
+}
