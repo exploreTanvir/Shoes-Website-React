@@ -18,7 +18,6 @@
 .sidebarLabelContainer input {
   position: absolute;
   opacity: 0;
-  cursor: pointer;
 }
 .checkMark {
   position: absolute;
