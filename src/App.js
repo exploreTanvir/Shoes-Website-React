@@ -1,5 +1,5 @@
 import { useState } from "react";
-import data from './DB/data';
+import Products from './DB/data';
 import Card from "./components/Card";
 import Items from "./items/Items";
 import Nav from "./navigation/Nav";
@@ -15,9 +15,9 @@ function App() {
     setQuery(event.target.value)
   }
 
-  const filterItems=data.filter((product)=>{
-    product.title.indexOf(query!==-1)
-  })
+  const filterItems=Products.filter((product)=>
+    product.title.toLowerCase().indexOf(query.toLowerCase())!==-1
+  )
 
 const handleChange=(event)=>{
   setCategory(event.target.value)
@@ -30,15 +30,14 @@ const handleClick=(event)=>{
 function filteredData(Products,selected,query){
     let filteredProducts=Products
 
-    // filter input
     if(query){
       filteredProducts=filterItems
     }
 
-    const {category,color,company,newPrice,title}=Products
+  
     //filter selected
-     if(query){
-      filteredProducts=filteredProducts.filter((Products)=>
+     if(selected){
+      filteredProducts=filteredProducts.filter(({category,color,company,newPrice,title})=>
       category===selected||
       color===selected||
       company===selected||
@@ -58,7 +57,7 @@ function filteredData(Products,selected,query){
     ))
 }
 
-const result=filteredData(data,category,query)
+const result=filteredData(Products,category,query)
   return (
     <div className="App">
       <Sidebar handleChange={handleChange}/>
